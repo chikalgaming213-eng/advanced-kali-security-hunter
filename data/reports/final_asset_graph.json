@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "node_id": "program",
+      "node_type": "program",
+      "label": "Authorized Program",
+      "properties": {}
+    },
+    {
+      "node_id": "target",
+      "node_type": "domain",
+      "label": "Target in explicit scope",
+      "properties": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "program",
+      "target": "target",
+      "relationship": "includes",
+      "confidence": 1.0
+    }
+  ]
+}

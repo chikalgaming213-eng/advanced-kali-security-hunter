@@ -1,0 +1,24 @@
+{
+  "product": "BUG BOUNTY HUNTER X",
+  "mode": "authorized_security_workstation",
+  "database": false,
+  "shared_storage": "data",
+  "environments": [
+    {"name": "ubuntu_kde", "purpose": "development, local server, and project workspace"},
+    {"name": "debian_xfce", "purpose": "lightweight security research workspace"},
+    {"name": "terminal", "purpose": "profiled safe terminal sessions"},
+    {"name": "metasploit", "purpose": "controlled module browsing and lab-only operations"},
+    {"name": "security_engine", "purpose": "read-only assessment orchestration"},
+    {"name": "local_server", "purpose": "explicitly managed local services"}
+  ],
+  "resource_limits": {"cpu_percent": 90, "ram_percent": 90, "disk_percent": 95, "process_count": 200, "action": "warn"},
+  "security": {
+    "default_authorization": "READ_ONLY",
+    "intrusive_operations": "disabled",
+    "privileged_operations": "confirmation_required",
+    "shell_strings": "forbidden",
+    "automatic_installation": "disabled",
+    "remote_vps": "not_supported_by_core"
+  },
+  "server_defaults": {"unprivileged_port_min": 1024, "restart_policy": "never", "log_directory": "data/logs/services"}
+}
