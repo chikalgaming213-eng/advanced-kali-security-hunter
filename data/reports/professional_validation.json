@@ -1,0 +1,21 @@
+[
+  {
+    "finding_id": "AKSH-INFO-001",
+    "title": "Assessment target registered",
+    "severity": "INFO",
+    "target": "127.0.0.1",
+    "description": "Target accepted by scope validator",
+    "impact": "No impact; informational",
+    "remediation": "Review authorization and scope records",
+    "evidence": [],
+    "references": [],
+    "tool": "aksh-core",
+    "cvss": null,
+    "port": null,
+    "protocol": null,
+    "url": null,
+    "confidence": 1.0,
+    "status": "open",
+    "timestamp": "2026-09-08T01:24:45.116384+00:00"
+  }
+]
