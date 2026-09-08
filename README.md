@@ -49,6 +49,18 @@ flowchart LR
     E --> G[SOC GUI]
 ```
 
+### Actual GUI preview
+
+The following PNG is a rendered preview of the unified GUI layout used by the application at runtime:
+
+![BUG BOUNTY HUNTER X unified GUI preview](docs/images/unified_gui.png)
+
+The following PNG is the rendered runtime data-flow view connecting the root launcher, unified shell, Security Hunter, Defense Monster SOC, traffic guard, malware monitor, evidence, and timeline:
+
+![BUG BOUNTY HUNTER X unified runtime](docs/images/unified_runtime.png)
+
+The image assets are stored in `docs/images/` and are versioned with the repository so they display directly on GitHub.
+
 ## Main capabilities
 
 | Area | Capability |
@@ -121,6 +133,18 @@ All GUI workspaces are opened through one application:
 source .venv/bin/activate
 python main.py --gui
 ```
+
+The root launcher provides the same entry point plus the main local operations:
+
+```bash
+python run.py gui
+python run.py scan 127.0.0.1 --report root_assessment
+python run.py defense
+python run.py monitor
+python run.py test
+```
+
+Run these commands from the repository root. The launcher uses the current Python interpreter and does not require manual directory changes between GUI or backend components.
 
 The left navigation provides the following pages:
 

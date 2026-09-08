@@ -1,0 +1,26 @@
+flowchart LR
+    ROOT[run.py root launcher] --> GUI[main.py --gui]
+    GUI --> SHELL[UnifiedMainWindow]
+    SHELL --> H[Main Security Hunter]
+    SHELL --> SOC[Defense Monster SOC]
+    SHELL --> DOS[Anti DoS/DDoS Monitor]
+    SHELL --> MAL[Malware Risk Monitor]
+    SHELL --> UK[Ubuntu KDE Environment]
+    SHELL --> DX[Debian XFCE Environment]
+    SHELL --> MSF[Metasploit Workspace]
+    SHELL --> MON[System Monitor]
+    H --> SCOPE[Scope + READ_ONLY policy]
+    SCOPE --> ENGINE[Assessment Engine]
+    ENGINE --> REPORT[JSON / HTML / Markdown / TXT]
+    SOC --> SHIELD[Network Shield]
+    SOC --> FW[Firewall Monitor]
+    SOC --> DETECT[Detectors + Classifier]
+    DOS --> GUARD[Traffic Guard]
+    MAL --> HEUR[Conservative Heuristics]
+    SHIELD --> EVENTS[Local Events]
+    FW --> EVENTS
+    DETECT --> EVENTS
+    GUARD --> EVENTS
+    HEUR --> EVENTS
+    EVENTS --> EVIDENCE[JSONL Evidence + SHA256]
+    EVENTS --> TIMELINE[Security Timeline]
