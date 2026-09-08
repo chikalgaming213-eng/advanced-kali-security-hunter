@@ -3,6 +3,7 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
+from storage.project_store import PortableProject
 
 ROOT = Path(__file__).resolve().parent
 
@@ -15,6 +16,10 @@ def build_parser() -> argparse.ArgumentParser:
     scan.add_argument("--report", default="root_assessment")
     sub.add_parser("defense", help="run the defensive SOC snapshot")
     sub.add_parser("monitor", help="show workstation environment metrics")
+    project = sub.add_parser("project", help="create a portable database-free project")
+    project.add_argument("path")
+    project.add_argument("--name", default="Security Project")
+    project.add_argument("--program", default="Authorized Program")
     sub.add_parser("test", help="run the full test suite")
     return parser
 
@@ -28,6 +33,10 @@ def run(argv: list[str] | None = None) -> int:
         return subprocess.call([sys.executable, "defense_cli.py", "snapshot"], cwd=ROOT)
     if args.command == "monitor":
         return subprocess.call([sys.executable, "workstation_cli.py", "monitor"], cwd=ROOT)
+    if args.command == "project":
+        project = PortableProject.create(Path(args.path), args.name, args.program)
+        print(project.export_manifest())
+        return 0
     if args.command == "test":
         return subprocess.call([sys.executable, "-m", "pytest", "-q"], cwd=ROOT)
     build_parser().print_help()

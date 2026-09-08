@@ -141,6 +141,7 @@ python run.py gui
 python run.py scan 127.0.0.1 --report root_assessment
 python run.py defense
 python run.py monitor
+python run.py project projects/example-program --name "Example Program" --program "Authorized Bug Bounty"
 python run.py test
 ```
 
@@ -190,6 +191,16 @@ python -c 'from cli_features import dispatch; dispatch(["scan", "127.0.0.1", "--
 ```
 
 Reports are written under `data/reports/` in JSON, Markdown, HTML, and TXT formats.
+
+## Portable project system
+
+Projects are ordinary folders and can be copied, archived, reviewed, or moved between authorized workstations. The project manager creates `project.json`, JSONL streams for targets, assets, findings, jobs, and events, plus `evidence/`, `scans/`, `reports/`, and `logs/` directories. No database is required.
+
+```bash
+python run.py project projects/program-a --name "Program A" --program "Authorized Program A"
+```
+
+All future tool executions are intended to pass through the guarded pipeline: target validation, explicit scope, authorization, policy, rate limit, command validation, bounded execution, parser, and evidence. An out-of-scope target is blocked before command execution.
 
 ## Bug Bounty Hunter workflow combination
 
