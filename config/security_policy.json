@@ -1,0 +1,1 @@
+{"default_authorization":"READ_ONLY","private_networks_allowed":true,"intrusive_requires_lab_mode":true,"deny_arbitrary_internet_exploitation":true,"deny_credential_theft":true,"deny_persistence":true,"deny_dos":true,"audit_all_commands":true}
