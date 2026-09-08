@@ -147,7 +147,7 @@ python run.py test
 
 Run these commands from the repository root. The launcher uses the current Python interpreter and does not require manual directory changes between GUI or backend components.
 
-The left navigation provides the following pages:
+The left navigation provides the following pages. Each page is wired to a backend service or a real local data view; there are no placeholder navigation panels:
 
 - Main Security Hunter
 - Defense Monster SOC
