@@ -1,0 +1,10 @@
+{
+  "product": "DEFENSE MONSTER X",
+  "mode": "LOCAL_ANALYSIS_ONLY",
+  "layers": ["network_shield", "firewall_monitor", "connection_monitor", "ids", "ssh_defense", "web_defense", "port_scan_detection", "brute_force_detection", "rate_anomaly", "threat_intelligence", "behavior_engine", "incident_response"],
+  "detection": {"failed_attempt_threshold": 20, "window_seconds": 120, "cooldown_seconds": 300, "scan_port_threshold": 10, "anomaly_multiplier": 5.0},
+  "response": {"mode": "MANUAL", "threshold": 80, "default_block_seconds": 900, "allowlist_precedence": true, "permanent_blocks": false},
+  "safety": {"retaliation": false, "counter_attack": false, "ddos": false, "credential_theft": false, "automatic_firewall_change": false, "explicit_confirmation_required": true},
+  "evidence_root": "data/defense",
+  "threat_intelligence": {"provider": "LOCAL ANALYSIS ONLY", "api_keys_from_environment_only": true}
+}
